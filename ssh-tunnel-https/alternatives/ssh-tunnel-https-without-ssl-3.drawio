@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.4">
+  <diagram name="Pagina-1" id="zO8hllDCgC5qx4eIR3NT">
+    <mxGraphModel dx="980" dy="684" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-3" value="Proxmox" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_on_premise;strokeColor=#7D8998;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#5A6C86;dashed=0;" parent="1" vertex="1">
+          <mxGeometry x="270" y="140" width="320" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-9" value="&lt;b&gt;NGINX&lt;/b&gt;&lt;div&gt;HTTPS:443&lt;div&gt;stream&lt;/div&gt;&lt;/div&gt;" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="8KRiPz4Sm5_sLjt966MO-3" vertex="1">
+          <mxGeometry x="10" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-10" value="SSH:22" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="8KRiPz4Sm5_sLjt966MO-3" vertex="1">
+          <mxGeometry x="210" y="90" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-11" value="SSH:22" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="8KRiPz4Sm5_sLjt966MO-3" vertex="1">
+          <mxGeometry x="210" y="240" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-6" value="VM1" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Virtual_Machine.svg;" parent="8KRiPz4Sm5_sLjt966MO-3" vertex="1">
+          <mxGeometry x="210" y="30" width="50" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-7" value="VM1" style="image;sketch=0;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Virtual_Machine.svg;" parent="8KRiPz4Sm5_sLjt966MO-3" vertex="1">
+          <mxGeometry x="210" y="180" width="50" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" parent="8KRiPz4Sm5_sLjt966MO-3" source="8KRiPz4Sm5_sLjt966MO-9" target="8KRiPz4Sm5_sLjt966MO-10" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="240" as="sourcePoint" />
+            <mxPoint x="180" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="8KRiPz4Sm5_sLjt966MO-3" source="8KRiPz4Sm5_sLjt966MO-9" target="8KRiPz4Sm5_sLjt966MO-11" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="240" as="sourcePoint" />
+            <mxPoint x="180" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-4" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;strokeWidth=2;shape=mxgraph.arrows2.arrow;dy=0.6;dx=40;notch=0;direction=east;rotation=-45;" parent="1" vertex="1">
+          <mxGeometry x="71.8" y="260.3" width="223.93" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-5" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="30" y="390" width="152.78" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-2" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#434445;aspect=fixed;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.vvd.laptop;" parent="8KRiPz4Sm5_sLjt966MO-5" vertex="1">
+          <mxGeometry width="152.78" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-1" value="SSH" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="8KRiPz4Sm5_sLjt966MO-5" vertex="1">
+          <mxGeometry y="10" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-15" value="ProxyCommand nc pmhost:443 nc %h %p" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=0;" parent="1" vertex="1">
+          <mxGeometry x="58.760000000000005" y="100" width="250" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-16" value="SSH tunnel HTTPS without SSL (w/o S)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="600" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-17" value="&lt;b&gt;HTTPS proxy By ISP&lt;/b&gt;" style="shape=tape;whiteSpace=wrap;html=1;rotation=45;" parent="1" vertex="1">
+          <mxGeometry x="58.12000000000002" y="240.3" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-19" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" parent="1" source="8KRiPz4Sm5_sLjt966MO-17" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="380" as="sourcePoint" />
+            <mxPoint x="390" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8KRiPz4Sm5_sLjt966MO-20" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;The Proxy expects SSL negotiation !!&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="400" y="545" width="180" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
