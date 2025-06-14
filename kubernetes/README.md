@@ -79,3 +79,66 @@ I found it weird that there isn't a simpler direction, by the mean of kubeadm, f
 Installing kubernetes on a clean machine is a 10 minutes task, so it is possible to just repeat if not confortable.
 
 On https://github.com/cri-o/packaging/ there is nothing like Ansible scripts, Terraform script, and so on. This project is just focused to CRI-O and its testing environment. Nevertheless it describes in details all steps required to setup kubernetes, and just it.
+
+## More log on installing on this configuration
+
+VMs IP are 10.4.1.11 and 10.4.1.12
+Default kubernetes config from kubeadm is 10.96.0.0/12
+If I take the first 12 bit, it is 64 + 32, 2^6 + 2^5
+
+~~~
+00001010.00110000.00000000.00000000
+-------------
+this part
+~~~
+
+local network CIDR is 10.4.0.0/16
+
+~~~
+00001010.000000100.00000000.00000000
+------------------
+this part
+~~~
+
+So those are compatible.
+
+The problem was with my cni installation. Really on worker node the config file was named .conf and not .conflist
+
+When I tried to install calico I needed to investigate what was going on
+
+Calico:
+
+> kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.30.1/manifests/tigera-operator.yaml
+
+> kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.30.1/manifests/custom-resources.yaml
+
+
+## Installing flannel
+
+https://github.com/flannel-io/flannel
+
+because of kube-flannel daemonset is not running properly
+
+edit /etc/kubernetes/manifests/kube-controller-manager.yaml
+at command ,add
+--allocate-node-cidrs=true
+--cluster-cidr=10.244.0.0/16
+
+https://github.com/flannel-io/flannel/issues/728
+
+This set something like node ip and cluster ip
+
+If flannel is required for calico, still I do not know
+
+
+Invoce kubeadm with:
+
+kubeadm init --pod-network-cidr=10.244.0.0/16
+
+
+Calico default IPPool want 192.168.0.0/16 . Do:
+
+kubectl edit installation
+
+(in default namespace) and replace with 10.244.0.0/16
+
