@@ -74,6 +74,33 @@ There is nothing like SNI for it, because the port exposed is 6443, not a standa
 
 I found it weird that there isn't a simpler direction, by the mean of kubeadm, for specifying kubectl command, and not just advice .kube/config replacement.
 
+use https://github.com/btungut/kubeconfig-merge may be an option
+
+These tricks https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/ do not give real control over what you are doing.
+
+may be an option to move the config in a file named .kube/toimport and parse it by config
+
+kubectl config --kubeconfig=toimport view -o jsonpath='{.clusters[0].cluster.certificate-authority-data}' --raw > b64cert
+
+Then refer it in new configuration.
+
+In this way one can script the import just by replacing the .kube/toimport file with
+something that came from the server
+
+A bash script would look like:
+
+```
+kubectl config --kubeconfig=toimport view -o jsonpath='{.clusters[0].cluster.certificate-authority-data}' --raw > .kube/clustercert.b64
+kubectl config --kubeconfig=toimport view -o jsonpath='{.users[0].user.client-certificate-data}' --raw > .kube/user-client-cert.b64
+kubectl config --kubeconfig=toimport view -o jsonpath='{.users[0].user.client-key-data}' --raw > .kube/user-client-key.b64
+```
+and use clustercert.b64, user-client-cert.b64, and user-client-key.b64 in .kube/config as file name.
+
+(maybe base64 encoded is not ok, so base64 -d it. To add to the script, of course)
+
+So one can repeat kubeadm init and kubeadm reset a number of time to experiments with parameters, and quickly work from remote
+
+
 ## End notes
 
 Installing kubernetes on a clean machine is a 10 minutes task, so it is possible to just repeat if not confortable.
