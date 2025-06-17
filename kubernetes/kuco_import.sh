@@ -49,7 +49,7 @@ extract_json_to_ku () {
   local TARGET=$2
   local BASEF=$SERV-$TARGET
   kubectl config --kubeconfig=$FILENAME view -o jsonpath=$JSON --raw > $TEMPDIR/$BASEF.b64
-  base64 -d -i $TEMPDIR/$BASEF.b64 -o .kube/$BASEF
+  base64 -d -i $TEMPDIR/$BASEF.b64 -o $HOME/.kube/$BASEF
 }
 
 extract_json_to_ku "{.clusters[0].cluster.certificate-authority-data}" "cluster-cert.crt"
