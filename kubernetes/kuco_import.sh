@@ -22,6 +22,23 @@ if [ -z $1 ] || [ -z $2 ]; then
   exit 1
 fi
 
+if [ ! -f $1 ]; then
+  echo "File $1 does not exist."
+  exit 1
+fi
+if [ ! -d .kube ]; then
+  echo "Directory .kube does not exist. Please create it first."
+  exit 1
+fi
+if [ ! -w .kube ]; then
+  echo "Directory .kube is not writable. Please check permissions."
+  exit 1
+fi
+if ! command -v kubectl &> /dev/null; then
+  echo "kubectl command not found. Please install kubectl first."
+  exit 1
+fi
+
 FILENAME=$1
 SERV=$2
 
